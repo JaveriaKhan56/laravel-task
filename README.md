@@ -11,49 +11,48 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+# Laravel Task Manager (Blade + Authentication)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Overview
+A simple Task Manager web application built with **Laravel Blade** and **Laravel Breeze authentication**. Users can register, login, and manage their own tasks with CRUD functionality. The design uses Blade layouts and includes flash messages for success/error.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Features Implemented
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Authentication (Laravel Breeze)
+- User registration (`/register`)
+- User login (`/login`)
+- User logout (`/logout`)
+- Auth middleware protects all task-related routes
 
-### Premium Partners
+### 2. Pages (Blade Views)
+| Page | URL | Description |
+|------|-----|------------|
+| Dashboard | /dashboard | Welcome page after login |
+| Task List | /tasks | List of user's tasks |
+| Create Task | /tasks/create | Form to add a new task |
+| Edit Task | /tasks/{id}/edit | Form to edit an existing task |
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 3. Task Management (CRUD)
+- **Fields:** `id`, `user_id`, `title` (required, min 3 chars), `description` (optional), `is_completed` (default false), `timestamps`
+- Users can only view/edit/delete **their own tasks**
+- Validation errors displayed in Blade views
 
-## Contributing
+### 4. Design & UI
+- Blade layouts (`layouts/app.blade.php`) used for consistent structure
+- Success/error flash messages implemented
+- Responsive forms for create/edit tasks
+- Task completion indicated with checkbox/button
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Setup Instructions
 
-## Security Vulnerabilities
+1. **Download / copy project**  
+   - Download the repository ZIP from GitHub or clone it:
+   ```bash
+   git clone https://github.com/JaveriaKhan56/laravel-task.git
+   cd <laravel-task>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
